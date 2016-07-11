@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col s6">
+    <h3>Sessões</h3>
+    <button class="btn sessao" ng-class="{disabled:!vm.user.user}" ng-click="vm.newSession(vm.user);" ng-disabled="!vm.user.user">Criar Sessão</button>
+    <table class="bordered highlight">
+      <thead>
+       <tr>
+         <th>Nome</th>
+         <th>Versão</th>
+         <th></th>
+       </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, value) in vm.sessions">
+          <td>
+            {{value.users[0].user}}
+          </td>
+          <td>
+            {{value.__v}}
+          </td>
+          <td>
+            <button class="btn" ng-click="vm.enterExistsSession(value, vm.user);" ng-disabled="!vm.user.user" ng-class="{disabled:!vm.user.user}">
+              Acessar
+            </button>
+            <button class="btn" ng-click="vm.spySession(value);" ng-disabled="!vm.user.user" ng-class="{disabled:!vm.user.user}">
+              Espiar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col s4">
+    <div class="card">
+      <div class="card-content black-text">
+        <span class="card-title">Informações do Usuário</span>
+        <input type="text" ng-model="vm.user.user" placeholder="Usuário...">
+        <input type="color" ng-model="vm.user.color">
+      </div>
+    </div>
+    <!-- <h4>Informações do Usuário</h4> -->    
+  </div>
+</div>
+<div class="row">
+  <div class="col s6">
+    <h4>Espiar Sessão</h4>
+    <div ng-if="!vm.sessionView">
+      <h6>Selecione uma sessão para espiar.</h6>
+    </div>
+    <div ng-if="vm.sessionView">
+      <button ng-click="vm.slideImg('prev');" class="btn">Anterior</button>
+      <button ng-click="vm.slideImg('next');" class="btn">Próximo</button>
+      <br />
+        <div class="slider" ng-if="vm.sessionView">
+        <ul class="slides">
+          <li ng-repeat="(key, value) in vm.sessionView.draw">
+            <img src={{value}} class="materialboxed">
+            <div class="caption center-align">
+              <h3>Versão {{vm.nDraw}}</h3>
+            </div>
+          </li>
+        </ul>
+        <br />
+        <button class="btn" ng-click="vm.newSession(vm.user, vm.sessionView.draw[vm.nDraw]);" ng-disabled="!vm.user.user">Criar sessão daqui</button>      
+      </div>
+    </div>
+  </div>
+</div>

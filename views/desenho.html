@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col s3">
+    <h3>Detalhes da Sessão</h3>
+    <h5>Dono: {{vm.users[0].user}}</h5>
+    <h5>Versão da Sessão: {{vm.version}}</h5>
+  </div>
+  <div class="col s6">
+    <div class="card z-depth-3">
+      <div class="card-content">
+        <span class="card-title"> Tela de desenho</span>                
+      </div>
+        <div class="card-action center">
+          <canvas id="quadro" width="600" height="400">
+            Your browser does not support the HTML5 canvas tag.
+          </canvas>
+        </div>
+      </div>
+  </div>
+  <div class="col s3">
+    <h3>Usuarios</h3>
+    <ul class="collection">
+      <li ng-repeat="user in vm.users" class="collection-item">
+        {{user.user}}
+      </li>
+    </ul>
+  </div>
+</div>

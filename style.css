@@ -1,0 +1,22 @@
+#quadro {
+	border:1px solid #d3d3d3;
+	background: beige;
+	margin-left: 10px;
+}
+#usuario{
+	position: fixed;
+	left: 50%;
+}
+td{
+	text-align: center;
+}
+th{
+	text-align: center;
+}
+.btn.sessao{
+	margin-top: 20px;
+}
+.color{
+	min-width: 50px;
+	margin-left: 10px;
+}

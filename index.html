@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="wspaint">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>WSPaint</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  
+    <!-- <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
+    <link rel="stylesheet" type="text/css" href="bower_components/Materialize/dist/css/materialize.min.css" media="screen,projection">
+    <!-- <script src="script.js" charset="utf-8"></script> -->
+  </head>
+  <body>
+   <nav>
+      <div class="nav-wrapper brown">
+        <a href="#/" class="brand-logo">WSPaint<small>Client</small></a>
+      </div>
+    </nav>
+    <div ng-view="" class="">
+
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="bower_components/Materialize/dist/js/materialize.min.js" charset="utf-8"></script>
+    <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <script src="bower_components/angular-route/angular-route.min.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="controllers/desenhoCtrl.js" charset="utf-8"></script>
+    <script src="controllers/sessionCtrl.js" charset="utf-8"></script>
+    <script src="services/telaService.js" charset="utf-8"></script>
+    <script src="services/webSocketService.js" charset="utf-8"></script>
+    <script src="services/sessionService.js" charset="utf-8"></script>
+    <script src="config/routeConfig.js" charset="utf-8"></script>
+    <script src="bower_components/socket.io/socket.io.js"></script>
+  </body>
+</html>
